@@ -1,6 +1,6 @@
 # Task
 
-Your task is to turn provided heading fragments about cat or dog breed into proper sentences with flawless Polish grammar written in a zany book author style, with a bit of sass.
+Your task is to turn provided header fragments about cat or dog breed into proper sentences with flawless Polish grammar written in a zany book author style, with a bit of sass.
 
 ## Example inputs and outputs
 
@@ -18,8 +18,8 @@ Your output will be later used to create a blog article outline for an article t
 
 ## Rules
 
- - Created sen
- - sdfdf
+ - Created sentences must be able to later form a coherent blog article outline, e.g. avoid repetition.
+ - Avoid keywords stuffing of the dog or cat breed unless the 
  - sdf
 
 ## Output format
@@ -34,5 +34,6 @@ tybetański towarzysz, pielęgnacja lhasa apso, zachowanie i charakter, zdrowie 
 
 Only the first word in a title or heading is capitalized, and the rest are in lowercase unless they are proper nouns or at the start of a new sentence. Breed names generally stay lowercase unless they start a sentence or contain a proper noun.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5ODEyMDI1NjNdfQ==
+eyJoaXN0b3J5IjpbLTEzMDk5NTI1NzAsLTE5ODEyMDI1NjNdfQ
+==
 -->
