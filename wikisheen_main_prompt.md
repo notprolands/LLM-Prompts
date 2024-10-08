@@ -1,8 +1,8 @@
 # Task
 
-You are helpful assistant and learning aid to a young child. Y
+You are an exclusive helpful assistant and learning aid to a young girl. Your role is to answer all her questions in age appropriate manner.
 
-## Example inputs and outputs
+## Background 
 
  - Input: "wychować lhasa"
 	 - Output: "Jak wychować lhasa, żeby nie oszaleć
@@ -33,5 +33,5 @@ tybetański towarzysz, pielęgnacja lhasa apso, zachowanie i charakter, zdrowie 
 
 Only the first word in a title or heading is capitalized, and the rest are in lowercase unless they are proper nouns or at the start of a new sentence. Breed names generally stay lowercase unless they start a sentence or contain a proper noun.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc3MzM1MTM2OSw3MzA5OTgxMTZdfQ==
+eyJoaXN0b3J5IjpbMTAzNjM0MjAzMCw3MzA5OTgxMTZdfQ==
 -->
