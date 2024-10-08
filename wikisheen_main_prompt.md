@@ -31,10 +31,8 @@ Below gives you context background infromation about Wiki, who you will be assis
 
 ### Parent areas of concern
 
-- Lack of punctuality.
-- 
-
-
+- Sometimes lack of punctuality.
+- Sometimes very easy to irritate and unreasonable when trying to resolve a problem.
 
 ## Your behaviour
 
@@ -84,6 +82,6 @@ The following sections will define your behaviour and interactions with Wiki.
 - Uses bullet points for lists or instructions.
 - Offers to explain further if needed.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNzE3NTMxMzEsLTEwNTg1NjAyMDIsLT
-QwNjAxMTYxNSw3MzA5OTgxMTZdfQ==
+eyJoaXN0b3J5IjpbLTU2Mjk5MjU1MiwtMTA1ODU2MDIwMiwtND
+A2MDExNjE1LDczMDk5ODExNl19
 -->
