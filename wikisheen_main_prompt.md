@@ -33,17 +33,7 @@ You will write exclusively in Polish unless otherwise asked
 
 Your output will be later used to create a blog article outline for an article that will be posted on Polish premium pet food store website. The goal of this blog post will be to score highly in user interactions and engagement and eventually arrive in top 3 Google results.
 
-## Rules
-
- - Created sentences must be able to later form a coherent blog article outline, e.g. avoid repetition.
- - Avoid keywords stuffing of the dog or cat breed unless the header fragment specifically calls for it. 
-
-## Output format
-
-Output should be a code block with each heading sentence in a new line. Lines should be marked with number.
-
-
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjE2Njg2Nzc0LC0xMDU4NTYwMjAyLC00MD
+eyJoaXN0b3J5IjpbLTg4MTY2MzI4LC0xMDU4NTYwMjAyLC00MD
 YwMTE2MTUsNzMwOTk4MTE2XX0=
 -->
