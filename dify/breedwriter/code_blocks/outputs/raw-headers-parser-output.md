@@ -1,0 +1,3 @@
+```json
+{"header_fragments": ["tybetański towarzysz", "pielęgnacja lhasa apso", "zachowanie i charakter", "zdrowie i pielęgnacja", "wygląd i cechy", "zdrowie psa", "pies towarzyszący", "wychowanie i hodowla", "czesanie lhasa", "strzyżenie lhasa", "cechy szczególne", "zdrowie i dolegliwości", "rasa lhasa", "opis i wygląd", "charakter i usposobienie", "pielęgnacja i zdrowie", "zdrowie lhasa", "jak wygląda"]}
+```
