@@ -1,19 +1,28 @@
-def main(raw_headers_paste: str) -> dict:
+def main(arg1: str) -> dict:
     # Split into lines and clean
-    lines = [line.strip() for line in raw_headers_paste.splitlines() if line.strip()]
+    lines = [line.strip() for line in arg1.splitlines() if line.strip()]
     
-    # Extract text parts using regex to remove trailing number
+    # Extract keywords and minimum frequency using regex
     import re
-    fragments = []
+    keyword_freq = []
+    
     for line in lines:
-        # Remove trailing number pattern (digit at end of line)
-        text = re.sub(r'\s*\d+\s*$', '', line).strip()
-        if text:
-            fragments.append(text)
+        # Pattern to match: text, followed by 0, followed by numbers-numbers
+        pattern = r'^(.*?)\s+0\s*/\s*(\d+)-\d+'
+        match = re.match(pattern, line)
+        
+        if match:
+            keyword = match.group(1).strip()
+            min_freq = int(match.group(2))
+            
+            keyword_freq.append({
+                "keyword": keyword,
+                "frequency": min_freq
+            })
     
     # Create JSON structure
     output_dict = {
-        "header_fragments": fragments
+        "keyword_frequencies": keyword_freq
     }
             
     # Convert to JSON string and wrap in markdown code block

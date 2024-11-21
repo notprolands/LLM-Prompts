@@ -1,6 +1,6 @@
-def main(raw_questions_paste: str) -> dict:
+def main(arg1: str) -> dict:
     # Split into lines and clean
-    lines = [line.strip() for line in raw_questions_paste.splitlines() if line.strip()]
+    lines = [line.strip() for line in arg1.splitlines() if line.strip()]
     
     # Extract text parts using regex to remove trailing number
     import re

@@ -1,4 +1,4 @@
-def main(header_sentences: str, additional_header_sentences: str) -> dict:
+def main(arg1: str, arg2: str) -> dict:
     import json
     
     # Remove the ```json and ``` markers and clean up whitespace
@@ -6,8 +6,8 @@ def main(header_sentences: str, additional_header_sentences: str) -> dict:
         return text.replace('```json', '').replace('```', '').strip()
     
     # Clean and parse both JSON strings
-    data1 = json.loads(clean_json(header_sentences))
-    data2 = json.loads(clean_json(additional_header_sentences))
+    data1 = json.loads(clean_json(arg1))
+    data2 = json.loads(clean_json(arg2))
     
     # Combine the header_sentences arrays
     combined = {
