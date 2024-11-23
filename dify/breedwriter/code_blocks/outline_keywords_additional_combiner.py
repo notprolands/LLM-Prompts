@@ -1,4 +1,4 @@
-# Combines outline with keywords
+# Combines outline with additional keywords
 def main(arg1: str, arg2: str) -> dict:
     import json
     
@@ -15,11 +15,12 @@ def main(arg1: str, arg2: str) -> dict:
     
     # Iterate through both lists simultaneously
     for d1, d2 in zip(data1, data2):
-        # Create new dict with H2 and H3 from first input
+        # Create new dict with H2, H3, and combined keywords
         merged_item = {
-            "H2": d1.get("H2", ""),
-            "H3": d1.get("H3", ""),
-            "keywords": d2.get("keywords", [])
+            "H2": d1["H2"],
+            "H3": d1["H3"],
+            # Combine keywords from both inputs, removing duplicates
+            "keywords": list(set(d1["keywords"] + d2["keywords"]))
         }
         result.append(merged_item)
     

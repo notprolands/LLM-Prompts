@@ -19,5 +19,5 @@ def main(arg1: str, arg2: str) -> dict:
     formatted_output = f"```json\n{json_str}\n```"
     
     return {
-        'result': formatted_output
+        'complete_header_sentences': formatted_output
     }

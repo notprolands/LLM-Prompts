@@ -1,0 +1,50 @@
+def main(arg1: str) -> dict:
+    """
+    Splits a JSON string of keywords and frequencies into three roughly equal parts.
+    
+    Args:
+        arg1 (str): JSON string containing keywords and their frequencies
+        
+    Returns:
+        dict: Dictionary containing three parts of the split JSON with keys:
+            - keywords_and_frequencies_p1: First third of the keywords
+            - keywords_and_frequencies_p2: Second third of the keywords
+            - keywords_and_frequencies_p3: Final third of the keywords
+    """
+    import json
+    from json_repair import repair_json
+    
+    # Try to parse JSON, use repair if needed
+    try:
+        json_dict = json.loads(arg1)
+    except json.JSONDecodeError:
+        repaired = repair_json(arg1)
+        json_dict = json.loads(repaired)
+    
+    # Convert dictionary items to list for easier manipulation
+    items = list(json_dict.items())
+    
+    # Calculate split points
+    length = len(items)
+    first_split = length // 3
+    second_split = 2 * length // 3
+    
+    # Split items into three parts and convert to dictionaries
+    first_part = dict(items[:first_split])
+    second_part = dict(items[first_split:second_split])
+    third_part = dict(items[second_split:])
+    
+    # Convert each part to JSON string and wrap in markdown code block
+    json_p1 = json.dumps(first_part, ensure_ascii=False)
+    json_p2 = json.dumps(second_part, ensure_ascii=False)
+    json_p3 = json.dumps(third_part, ensure_ascii=False)
+    
+    markdown_p1 = f"```json\n{json_p1}\n```"
+    markdown_p2 = f"```json\n{json_p2}\n```"
+    markdown_p3 = f"```json\n{json_p3}\n```"
+    
+    return {
+        'keywords_and_frequencies_p1': markdown_p1,
+        'keywords_and_frequencies_p2': markdown_p2,
+        'keywords_and_frequencies_p3': markdown_p3
+    }

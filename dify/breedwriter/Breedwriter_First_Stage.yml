@@ -1,0 +1,809 @@
+app:
+  description: Produces article outline wiht H2s and H3s
+  icon: 🐩
+  icon_background: '#E4FBCC'
+  mode: advanced-chat
+  name: Breedwriter_First_Stage
+  use_icon_as_answer_icon: false
+kind: app
+version: 0.1.3
+workflow:
+  conversation_variables:
+  - description: ''
+    id: ceec5205-a695-45ef-9e9b-c71227eb4280
+    name: cat_or_dog
+    selector: []
+    value: ''
+    value_type: string
+  - description: ''
+    id: 21ea33e7-ca60-4520-b00f-d972f7b5a895
+    name: breed_name
+    selector: []
+    value: ''
+    value_type: string
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: llm
+      id: 1732132572524-source-1732133290912-target
+      selected: false
+      source: '1732132572524'
+      sourceHandle: source
+      target: '1732133290912'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: llm
+      id: 1732133290912-source-17321335646820-target
+      selected: false
+      source: '1732133290912'
+      sourceHandle: source
+      target: '17321335646820'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: llm
+      id: 1732134330106-source-1732133290912-target
+      selected: false
+      source: '1732134330106'
+      sourceHandle: source
+      target: '1732133290912'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: code
+      id: 17321335646820-source-1732134854286-target
+      selected: false
+      source: '17321335646820'
+      sourceHandle: source
+      target: '1732134854286'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: llm
+      id: 1732134854286-source-17321350455820-target
+      selected: false
+      source: '1732134854286'
+      sourceHandle: source
+      target: '17321350455820'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: answer
+      id: 17321350455820-source-1732132651350-target
+      selected: false
+      source: '17321350455820'
+      sourceHandle: source
+      target: '1732132651350'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: llm
+      id: 17322210778720-source-1732133290912-target
+      selected: false
+      source: '17322210778720'
+      sourceHandle: source
+      target: '1732133290912'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: assigner
+        targetType: code
+      id: 1732222689783-source-1732134330106-target
+      selected: false
+      source: '1732222689783'
+      sourceHandle: source
+      target: '1732134330106'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: assigner
+        targetType: code
+      id: 1732222689783-source-1732132572524-target
+      selected: false
+      source: '1732222689783'
+      sourceHandle: source
+      target: '1732132572524'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: assigner
+        targetType: code
+      id: 1732222689783-source-17322210778720-target
+      selected: false
+      source: '1732222689783'
+      sourceHandle: source
+      target: '17322210778720'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: assigner
+      id: 1732126166173-source-1732222808958-target
+      selected: false
+      source: '1732126166173'
+      sourceHandle: source
+      target: '1732222808958'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: assigner
+        targetType: assigner
+      id: 1732222808958-source-1732222689783-target
+      selected: false
+      source: '1732222808958'
+      sourceHandle: source
+      target: '1732222689783'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: Start
+        type: start
+        variables:
+        - label: raw_headers_paste
+          max_length: 9999
+          options: []
+          required: true
+          type: paragraph
+          variable: raw_headers_paste
+        - label: raw_keywords_paste
+          max_length: 9999
+          options: []
+          required: true
+          type: paragraph
+          variable: raw_keywords_paste
+        - label: raw_questions_paste
+          max_length: 9999
+          options: []
+          required: true
+          type: paragraph
+          variable: raw_questions_paste
+        - label: breed_name
+          max_length: 48
+          options: []
+          required: true
+          type: text-input
+          variable: breed_name
+        - label: cat_or_dog
+          max_length: 48
+          options: []
+          required: true
+          type: text-input
+          variable: cat_or_dog
+      height: 194
+      id: '1732126166173'
+      position:
+        x: -305.7837886999326
+        y: 284
+      positionAbsolute:
+        x: -305.7837886999326
+        y: 284
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "def main(arg1: str) -> dict:\n    # Split into lines and clean\n  \
+          \  lines = [line.strip() for line in arg1.splitlines() if line.strip()]\n\
+          \    \n    # Extract text parts using regex to remove trailing number\n\
+          \    import re\n    fragments = []\n    for line in lines:\n        # Remove\
+          \ trailing number pattern (digit at end of line)\n        text = re.sub(r'\\\
+          s*\\d+\\s*$', '', line).strip()\n        if text:\n            fragments.append(text)\n\
+          \    \n    # Create JSON structure\n    output_dict = {\n        \"header_fragments\"\
+          : fragments\n    }\n            \n    # Convert to JSON string and wrap\
+          \ in markdown code block\n    import json\n    json_str = json.dumps(output_dict,\
+          \ ensure_ascii=False)\n    markdown_json = f\"```json\\n{json_str}\\n```\"\
+          \n    \n    return {\n        'result': markdown_json\n    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: raw_headers_parser
+        type: code
+        variables:
+        - value_selector:
+          - '1732126166173'
+          - raw_headers_paste
+          variable: arg1
+      height: 54
+      id: '1732132572524'
+      position:
+        x: 560.2043177121286
+        y: 198.18858733223948
+      positionAbsolute:
+        x: 560.2043177121286
+        y: 198.18858733223948
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: 'raw_headers_parser
+
+          {{#1732132572524.result#}}
+
+          raw-keywords-parser
+
+          {{#1732134330106.result#}}
+
+          raw_questions_parser
+
+          {{#17322210778720.result#}}
+
+          blog_header_creator
+
+          {{#1732133290912.text#}}
+
+          blog_header_expander
+
+          {{#17321335646820.text#}}
+
+          headers_combiner
+
+          {{#1732134854286.result#}}
+
+          blog_outline_generator
+
+          {{#17321350455820.text#}}'
+        desc: ''
+        selected: false
+        title: Answer
+        type: answer
+        variables: []
+      height: 290
+      id: '1732132651350'
+      position:
+        x: 2011.9196376778334
+        y: 284
+      positionAbsolute:
+        x: 2011.9196376778334
+        y: 284
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.8
+          mode: chat
+          name: gemini-exp-1114
+          provider: google
+        prompt_config:
+          jinja2_variables:
+          - value_selector:
+            - conversation
+            - breed_name
+            variable: breed_name
+          - value_selector:
+            - conversation
+            - cat_or_dog
+            variable: cat_or_dog
+          - value_selector:
+            - '1732132572524'
+            - result
+            variable: header_fragments
+        prompt_template:
+        - edition_type: jinja2
+          id: c262be6b-01b6-48b7-9e1d-9644696b6aad
+          jinja2_text: "# Blog Article Header Creator\r\n## Description\r\nYou are\
+            \ an AI assistant tasked with creating engaging and playful header sentences\
+            \ for a blog article about {{ breed_name }} {{ cat_or_dog }} breed in\
+            \ Polish.\r\n## Task\r\nYour task is to transform ungramattical, keyword-like\
+            \ fragments about cat or dog breed into proper headers with flawless Polish\
+            \ grammar written in a zany book author style, with a bit of sass. You\
+            \ avoid breed name keyword stuffing.\r\n## Example inputs and outputs\r\
+            \n- Input header_fragment: \"wychować lhasa\"\r\n  - Output header_sentence:\
+            \ \"Jak wychować lhasa, żeby nie oszaleć (i nie skończyć owiniętym wokół\
+            \ jego kudłatej łapy)?\"\r\n- Input header_fragment: \"wychowanie i hodowla\"\
+            \r\n  - Output header_sentence: \"Od szczeniaka do mistrza zen (no, prawie!),\
+            \ czyli wychowanie i hodowla.\"\r\n- Input header_fragment: \"zdrowie\
+            \ i pielęgnacja\"\r\n  - Output header_sentence: \"Zdrowie i pielęgnacja\
+            \ kudłacza: poradnik przetrwania dla właścicieli.\"\r\n- Input header_fragment:\
+            \ \"strzyżenie lhasa\"\r\n  - Output header_sentence: \"Fryzury dla psa?\
+            \ Tak! Ale strzyżenie lhasa apso to nie przelewki.\"\r\n- Input header_fragment:\
+            \ \"charakter i usposobienie\"\r\n  - Output header_sentence: \"Mały pies\
+            \ o wielkiej osobowości: charakter i usposobienie Tybetańczyka.\"\r\n\
+            ## Context\r\nYour output will be later used to create a blog article\
+            \ outline for an article that will be posted on Polish premium pet food\
+            \ store website.\r\n## Rules\r\n- Embrace the awkwardness: Do not to hide\
+            \ the ungrammatical nature of the fragment. Instead, use it as a springboard\
+            \ for humor.\r\n- Think like a user: Consider how someone might search\
+            \ for information using these keywords.\r\n- Be creative and playful:\
+            \ Have fun with the language and let your personality shine through.\r\
+            \n- Avoid keyword stuffing: You **MUST** avoid overstuffing the header\
+            \ sentences with {{ breed_name }} breed name. Only use the breed name\
+            \ if the fragment contains it. Otherwise paraphrase and use alternative\
+            \ playful names, nicknames, or descriptive terms related to the breed\
+            \ characteristics, origin or history.\r\n- Maintain Coherence: Created\
+            \ sentences must be able to later form a coherent blog article outline,\
+            \ e.g. avoid repetition.\r\n## Output Format\r\nProperly formatted JSON\
+            \ code block of \"header_sentences\" like below:\r\n### Output Example\r\
+            \n```json\r\n{\r\n  \"header_sentences\":[\r\n    \"Tybetański towarzysz\
+            \ – czyli o psie, który skradnie ci serce (i kanapę)\",\r\n    \"Pielęgnacja\
+            \ psa: misja (prawie) niemożliwa, ale za to jaka satysfakcjonująca!\"\
+            ,\r\n    \"Mały pies o wielkiej osobowości: charakter i usposobienie Tybetańczyka\"\
+            ,\r\n    \"Zdrowie i pielęgnacja kudłacza: poradnik przetrwania dla właścicieli.\"\
+            ,\r\n    \"...\"\r\n  ]\r\n}\r\n```\r\n## Polish grammar reminder\r\n\
+            Only the first word in a title or heading is capitalized, and the rest\
+            \ are in lowercase unless they are proper nouns or at the start of a new\
+            \ sentence. Breed names generally stay lowercase unless they start a sentence\
+            \ or contain a proper noun."
+          role: system
+          text: ''
+        - edition_type: jinja2
+          id: cf7528c9-e7db-4c20-9981-77c00372d688
+          jinja2_text: "## Inputs\r\n### Header Fragments\r\n{{ header_fragments }}"
+          role: user
+          text: ''
+        selected: false
+        title: blog_header_creator
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '1732133290912'
+      position:
+        x: 882.1192615730234
+        y: 284
+      positionAbsolute:
+        x: 882.1192615730234
+        y: 284
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gemini-exp-1114
+          provider: google
+        prompt_config:
+          jinja2_variables:
+          - value_selector:
+            - conversation
+            - breed_name
+            variable: breed_name
+          - value_selector:
+            - conversation
+            - cat_or_dog
+            variable: cat_or_dog
+          - value_selector:
+            - '1732133290912'
+            - text
+            variable: header_sentences
+          - value_selector:
+            - '1732134330106'
+            - result
+            variable: keywords
+        prompt_template:
+        - edition_type: jinja2
+          id: c262be6b-01b6-48b7-9e1d-9644696b6aad
+          jinja2_text: "# Blog Article Additional Header Creator\r\n## Description\r\
+            \nYou are an AI assistant tasked with creating additional engaging and\
+            \ playful headers for a blog article about {{ breed_name }} {{ cat_or_dog\
+            \ }} breed in Polish based on keywords provided and suggested by typical\
+            \ blog post structure.\r\n## Resources\r\nThe user will provide you with\
+            \ two items:\r\n- A list of headers already created (those are mixed H2s\
+            \ and H3s)\r\n- A list of keywords and desired frequencies (you can ignore\
+            \ the frequencies, focus on keywords)\r\n## Task\r\n1. Analyze the list\
+            \ of existing headers and identify their themes/topics.\r\n2. Analyze\
+            \ the list of keywords and group them into themes.\r\n3. Map how existing\
+            \ headers cover these themes and identify content gaps.\r\n4. Strategically\
+            \ create new headers that:\r\n - Fill identified content gaps\r\n - Flow\
+            \ naturally with existing headers\r\n - Form logical transitions between\
+            \ topics\r\n - Create a comprehensive, well-structured blog outline as\
+            \ suggested by typical blog post structure\r\n - Can either act as H2s\
+            \ or H3s under existing headers\r\n## Rules\r\n- **DONT** use exact {{\
+            \ breed_name }} breed name in headers you create. Instead paraphrase and\
+            \ use:\r\n - Playful nicknames\r\n - Descriptive terms about characteristics\r\
+            \n - References to origin/history\r\n- Keywords dont need direct reflection\
+            \ in headers\r\n- Create strategic headers that can encompass multiple\
+            \ keywords\r\n- Use creative, playful language with personality\r\n- Ensure\
+            \ coherence by:\r\n - Avoiding topic repetition\r\n - Creating smooth\
+            \ topic transitions\r\n - Maintaining consistent tone\r\n - Building logical\
+            \ content progression\r\n## Typical blog post structure\r\nYour headers\
+            \ should primarily accomodate keywords but also help generate this structure\r\
+            \n- Physical characteristics\r\n- Personality & behavior\r\n- Care requirements\r\
+            \n - Nutrition\r\n - Exercise\r\n - Grooming\r\n- Health considerations\r\
+            \n- Cost (purchase & ownership)\r\n- Training & socialization\r\n- Similar\
+            \ breeds\r\n## Output Format\r\nProperly formatted JSON code block of\
+            \ \"header_sentences\" like below. Output only newly generated headers,\
+            \ do not output the ones already cretaed.\r\n### Output Example\r\n```json\r\
+            \n{\r\n  \"header_sentences\":[\r\n    \"Tybetański towarzysz – czyli\
+            \ o psie, który skradnie ci serce (i kanapę)\",\r\n    \"Pielęgnacja psa:\
+            \ misja (prawie) niemożliwa, ale za to jaka satysfakcjonująca!\",\r\n\
+            \    \"Mały pies o wielkiej osobowości: charakter i usposobienie Tybetańczyka\"\
+            ,\r\n    \"Zdrowie i pielęgnacja kudłacza: poradnik przetrwania dla właścicieli.\"\
+            ,\r\n    \"...\"\r\n  ]\r\n}\r\n```\r\n## Polish grammar reminder\r\n\
+            Only the first word in a title or heading is capitalized, and the rest\
+            \ are in lowercase unless they are proper nouns or at the start of a new\
+            \ sentence. Breed names generally stay lowercase unless they start a sentence\
+            \ or contain a proper noun."
+          role: system
+          text: ''
+        - edition_type: jinja2
+          id: 0399fde4-5c24-4c49-95b6-1e8d1a0fe1db
+          jinja2_text: "## Inputs\r\n### Already Created Headers\r\n{{ header_sentences\
+            \ }}\r\n### Keywords and Frequencies\r\n{{ keywords }}"
+          role: user
+          text: ''
+        selected: false
+        title: blog_header_expander
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '17321335646820'
+      position:
+        x: 1171.26851835118
+        y: 284
+      positionAbsolute:
+        x: 1171.26851835118
+        y: 284
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "def main(arg1: str) -> dict:\n    # Split into lines and clean\n  \
+          \  lines = [line.strip() for line in arg1.splitlines() if line.strip()]\n\
+          \    \n    # Extract keywords and minimum frequency using regex\n    import\
+          \ re\n    keyword_freq = []\n    \n    for line in lines:\n        # Pattern\
+          \ to match: text, followed by 0, followed by numbers-numbers\n        pattern\
+          \ = r'^(.*?)\\s+0\\s*/\\s*(\\d+)-\\d+'\n        match = re.match(pattern,\
+          \ line)\n        \n        if match:\n            keyword = match.group(1).strip()\n\
+          \            min_freq = int(match.group(2))\n            \n            keyword_freq.append({\n\
+          \                \"keyword\": keyword,\n                \"frequency\": min_freq\n\
+          \            })\n    \n    # Create JSON structure\n    output_dict = {\n\
+          \        \"keyword_frequencies\": keyword_freq\n    }\n            \n  \
+          \  # Convert to JSON string and wrap in markdown code block\n    import\
+          \ json\n    json_str = json.dumps(output_dict, ensure_ascii=False)\n   \
+          \ markdown_json = f\"```json\\n{json_str}\\n```\"\n    \n    return {\n\
+          \        'result': markdown_json\n    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: raw_keywords_parser
+        type: code
+        variables:
+        - value_selector:
+          - '1732126166173'
+          - raw_keywords_paste
+          variable: arg1
+      height: 54
+      id: '1732134330106'
+      position:
+        x: 560.2043177121286
+        y: 284
+      positionAbsolute:
+        x: 560.2043177121286
+        y: 284
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "def main(arg1: str, arg2: str) -> dict:\n    import json\n    \n  \
+          \  # Remove the ```json and ``` markers and clean up whitespace\n    def\
+          \ clean_json(text):\n        return text.replace('```json', '').replace('```',\
+          \ '').strip()\n    \n    # Clean and parse both JSON strings\n    data1\
+          \ = json.loads(clean_json(arg1))\n    data2 = json.loads(clean_json(arg2))\n\
+          \    \n    # Combine the header_sentences arrays\n    combined = {\n   \
+          \     \"header_sentences\": data1[\"header_sentences\"] + data2[\"header_sentences\"\
+          ]\n    }\n    \n    # Convert to JSON string and add markers\n    json_str\
+          \ = json.dumps(combined, ensure_ascii=False, indent=4)\n    formatted_output\
+          \ = f\"```json\\n{json_str}\\n```\"\n    \n    return {\n        'result':\
+          \ formatted_output\n    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: headers_combiner
+        type: code
+        variables:
+        - value_selector:
+          - '1732133290912'
+          - text
+          variable: arg1
+        - value_selector:
+          - '17321335646820'
+          - text
+          variable: arg2
+      height: 54
+      id: '1732134854286'
+      position:
+        x: 1453.4431707243916
+        y: 284
+      positionAbsolute:
+        x: 1453.4431707243916
+        y: 284
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.8
+          mode: chat
+          name: gemini-exp-1114
+          provider: google
+        prompt_config:
+          jinja2_variables:
+          - value_selector:
+            - conversation
+            - breed_name
+            variable: breed_name
+          - value_selector:
+            - conversation
+            - cat_or_dog
+            variable: cat_or_dog
+          - value_selector:
+            - '1732134854286'
+            - result
+            variable: complete_header_sentences
+        prompt_template:
+        - edition_type: jinja2
+          id: c262be6b-01b6-48b7-9e1d-9644696b6aad
+          jinja2_text: "# Blog Article Outline Generator\r\n## Description\r\nYou\
+            \ are an AI assistant tasked with creating structured blog article outlines\
+            \ in Polish language, with a focus on seamlessly integrating user-provided\
+            \ header sentences while maintaining a natural, engaging flow.\r\n## Background\r\
+            \nYour goal is to organize the given information into a logical and engaging\
+            \ structure of H2 and H3 headers that will guide the writing of the full\
+            \ article about {{ breed_name }} {{ cat_or_dog }} breed, while ensuring\
+            \ use of provided header sentences.\r\n## Task\r\n1. Analyze the provided\
+            \ headers.\r\n2. Identify which headers can serve as H2s.\r\n3. Identify\
+            \ which headers can serve as H3s under previously identified main sections.\r\
+            \n5. Create a detailed outline with logical flow from start to finish.\r\
+            \n- Ensure the outline:\r\n - Follows a logical flow of ideas.\r\n - Uses\
+            \ **all** provided header sentences verbatim.\r\n - Is written in Polish,\
+            \ with proper grammar and engaging language.\r\n - Avoids duplication.\r\
+            \n## Rules\r\n- All sections and subsections must contain the provided\
+            \ header sentences verbatim with no alteration.\r\n- If certain headers\
+            \ are not suitable as H3s break them out as separate H2s.\r\n- You must\
+            \ use all the header sentences provided.\r\n## Suggestions\r\nA typical\
+            \ breed article structure usually covers:\r\n- Physical characteristics\r\
+            \n- History\r\n- Personality & behavior\r\n- Care requirements\r\n - Nutrition\r\
+            \n - Exercise\r\n - Grooming\r\n- Health considerations\r\n- Cost (purchase\
+            \ & ownership)\r\n- Training & socialization\r\n- Similar breeds\r\n##\
+            \ Output Format\r\nProvide the final outline a JSON code block.\r\n###\
+            \ Output Example\r\n```json\r\n[\r\n  {\r\n    \"H2\":\"main section header\"\
+            ,\r\n    \"H3\":[\r\n      \"subsection header\",\r\n      \"subsection\
+            \ header\",\r\n      \"subsection header\",\r\n      \"...\"\r\n    ]\r\
+            \n  },\r\n  {\r\n    \"H2\":\"main section header\",\r\n    \"H3\":[\r\
+            \n      \"subsection header\",\r\n      \"subsection header\",\r\n   \
+            \   \"subsection header\",\r\n      \"...\"\r\n    ]\r\n  }\r\n]\r\n```\r\
+            \n"
+          role: system
+          text: ''
+        - edition_type: jinja2
+          id: 0399fde4-5c24-4c49-95b6-1e8d1a0fe1db
+          jinja2_text: "## Inputs\r\n### Header Sentences\r\n{{ complete_header_sentences\
+            \ }}"
+          role: user
+          text: ''
+        selected: false
+        title: blog_outline_generator
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '17321350455820'
+      position:
+        x: 1740.8098947561637
+        y: 284
+      positionAbsolute:
+        x: 1740.8098947561637
+        y: 284
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "def main(arg1: str) -> dict:\n    # Split into lines and clean\n  \
+          \  lines = [line.strip() for line in arg1.splitlines() if line.strip()]\n\
+          \    \n    # Extract text parts using regex to remove trailing number\n\
+          \    import re\n    fragments = []\n    for line in lines:\n        # Remove\
+          \ trailing number pattern (digit at end of line)\n        text = re.sub(r'\\\
+          s*\\d+\\s*$', '', line).strip()\n        if text:\n            fragments.append(text)\n\
+          \    \n    # Create JSON structure\n    output_dict = {\n        \"question_fragments\"\
+          : fragments\n    }\n            \n    # Convert to JSON string and wrap\
+          \ in markdown code block\n    import json\n    json_str = json.dumps(output_dict,\
+          \ ensure_ascii=False)\n    markdown_json = f\"```json\\n{json_str}\\n```\"\
+          \n    \n    return {\n        'result': markdown_json\n    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: raw_questions_parser
+        type: code
+        variables:
+        - value_selector:
+          - '1732126166173'
+          - raw_questions_paste
+          variable: arg1
+      height: 54
+      id: '17322210778720'
+      position:
+        x: 560.2043177121286
+        y: 373.6536047481548
+      positionAbsolute:
+        x: 560.2043177121286
+        y: 373.6536047481548
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        assigned_variable_selector:
+        - conversation
+        - cat_or_dog
+        desc: ''
+        input_variable_selector:
+        - '1732126166173'
+        - cat_or_dog
+        selected: false
+        title: va_cat_or_dog
+        type: assigner
+        write_mode: over-write
+      height: 132
+      id: '1732222689783'
+      position:
+        x: 271.67898816255683
+        y: 284
+      positionAbsolute:
+        x: 271.67898816255683
+        y: 284
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        assigned_variable_selector:
+        - conversation
+        - breed_name
+        desc: ''
+        input_variable_selector:
+        - '1732126166173'
+        - breed_name
+        selected: false
+        title: va_breed_name
+        type: assigner
+        write_mode: over-write
+      height: 132
+      id: '1732222808958'
+      position:
+        x: -12.976581656597006
+        y: 284
+      positionAbsolute:
+        x: -12.976581656597006
+        y: 284
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    viewport:
+      x: 460.5406374042742
+      y: 342.91655344500407
+      zoom: 0.5305007982786409

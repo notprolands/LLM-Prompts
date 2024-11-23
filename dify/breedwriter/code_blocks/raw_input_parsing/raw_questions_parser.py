@@ -22,5 +22,5 @@ def main(arg1: str) -> dict:
     markdown_json = f"```json\n{json_str}\n```"
     
     return {
-        'result': markdown_json
+        'question_fragments': markdown_json
     }
